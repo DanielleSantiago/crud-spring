@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.Data;
 
 
@@ -15,6 +17,7 @@ public class Course {
 
   @Id //Chave primária
   @GeneratedValue(strategy = GenerationType.AUTO) //Chave sequencial gerada automaticamente pelo banco de dados //A strategy é o modo de geração da chave, que varia de acordo com o banco de dados.
+  @JsonProperty("_id")
   private Long id;
 
   @Column(length = 200, nullable = false) //Coluna, que pode ter um nome (name = "nome") e ser associada a uma coluna com outro nome no banco de dados. Podemos definir o tamanho (length = 200, nullable = false) e se não pode ser nulo o conteudo.
